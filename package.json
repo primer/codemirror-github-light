@@ -1,0 +1,40 @@
+{
+  "version": "0.0.0",
+  "name": "codemirror-github-light",
+  "description": "The Codemirror CSS syntax theme for GitHub",
+  "homepage": "https://github.com/primer/codemirror-github-light#readme",
+  "style": "lib/codemirror-github-light-theme.css",
+  "main": "index.js",
+  "author": "GitHub Inc.",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primer/codemirror-github-light.git"
+  },
+  "bugs": {
+    "url": "https://github.com/primer/github-syntax-theme-generator/issues"
+  },
+  "scripts": {
+    "_version": "npm version $(npm view github-syntax-theme-generator version)",
+    "_commit": "git commit -am \"$(npm view github-syntax-theme-generator version)\"",
+    "_update": "npm update && cp node_modules/github-syntax-theme-generator/build/codemirror/codemirror-github-light-theme.css lib/.",
+    "ship": "npm run _update && npm run _commit && npm run _version && git push && git push --tags && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "syntax",
+    "css",
+    "theme",
+    "highlight",
+    "code",
+    "codemirror"
+  ],
+  "devDependencies": {
+    "github-syntax-theme-generator": "*"
+  }
+}
